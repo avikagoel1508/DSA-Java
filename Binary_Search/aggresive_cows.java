@@ -21,7 +21,6 @@ public static int largest_min_dist(int[] stalls, int c ){
     return ans;
 }
 public static boolean isitpossible(int[] stalls, int c, int mid) {
-    // TODO Auto-generated method stub
     int cow=1;
     int pos=stalls[0];
     for (int i = 1; i < stalls.length; i++) {
