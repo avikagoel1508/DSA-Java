@@ -1,12 +1,21 @@
+import java.util.Scanner;
+
 public class search_a_matrix {
     public static void main(String[] args) {
-        int[][] matrix={{1,4,7,11,15}};
-        int target=4;
-        System.out.println(matrix[0].length);
-        System.out.println(search(matrix, target));
+           Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+         int[][] arr=new int[m][n];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        int x=sc.nextInt();
+        System.out.println(search(arr, x));
     }
 
-    public static boolean search(int[][] matrix, int target) {
+    public static int search(int[][] matrix, int target) {
         int i=0;
         int j=matrix[0].length-1;
         while (i<matrix.length && j>=0) {
@@ -17,9 +26,9 @@ public class search_a_matrix {
                 i++;
             }
             else{
-                return true;
+                return 1;
             }
         }
-        return false;
+        return 0;
     }
 }
