@@ -1,17 +1,22 @@
 public class coin_comb {
-    public static void main(String[] args) {
-        int n=3;
-        coin(n,"");
-    }
-    public static void coin(int n, String ans){
-        if (n==0) {
-            System.out.println(ans);
-            return;
-        }
-        if (ans.length()==0 || ans.charAt(ans.length()-1)!='H') {
-            coin(n-1, ans+'H');
-        }
-        
-        coin(n-1, ans+'T');
-    }
+  public static void main(String[] args) {
+		
+		int[] coin = { 2, 3, 5 };
+		int amount = 8;
+		Combination(coin, amount, "", 0);
+
+	}
+
+	public static void Combination(int[] coin, int amount, String ans, int idx) {
+		if (amount == 0) {
+			System.out.println(ans);
+			return;
+		}
+		for (int i = idx; i < coin.length; i++) {
+			if (amount >= coin[i]) {
+				Combination(coin, amount - coin[i], ans + coin[i], i);
+			}
+		}
+
+	}
 }
