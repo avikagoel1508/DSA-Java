@@ -10,7 +10,7 @@ public class min_time_to_complete_trips {
         mint = Math.min(mint, x);
 }
          int lo=mint;
-        int hi=mint*totaltrips;
+        int hi=mint*totaltrips; // imp part of this question
         int ans=0;
         while (lo<=hi) {
             int mid=(lo+hi)/2;
