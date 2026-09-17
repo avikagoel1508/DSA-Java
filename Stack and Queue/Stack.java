@@ -7,16 +7,19 @@ public class Stack{
    public Stack(int n){
         arr=new int[n];
    }
-    public void push(int item){
+    public void push(int item) throws Exception{
      arr[++idx]=item;
-     if (idx==arr.length) {
-        return;
+     if (idx==arr.length-1) {
+        throw new Exception("Stacks overflow");
      }
     }
     public int peek(){
         return arr[idx];
     }
-    public int pop(){
+    public int pop() throws Exception{
+        if (isEmpty()) {
+            throw new Exception("Stacks underflow");
+        }
        int rv=arr[idx];
        idx--;
        return rv;
