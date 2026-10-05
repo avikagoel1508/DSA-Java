@@ -14,6 +14,7 @@ public class min_days_tomake_m_bouquets{
         lo = Math.min(lo, x);
 }
          int hi = arr[0];
+         
          for (int x : arr) {
         hi = Math.max(hi, x);
 }
