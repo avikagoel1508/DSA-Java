@@ -12,8 +12,8 @@ class Solution {
       
         return reverse(head, null);
     }
+    // using recursion.........................................................
     public ListNode reverse(ListNode curr, ListNode prev) {
-      
         if (curr==null) {
             return prev;
         }
@@ -21,6 +21,19 @@ class Solution {
         curr.next=prev;
         return temp;
     }
-    
+
+    // using loop....................................................................
+     public ListNode reverseList_loop(ListNode head) {
+      ListNode prev=null;
+      ListNode curr=head;
+      while (curr!=null) {
+        ListNode ahead=curr.next;
+        curr.next=prev;
+        prev=curr;
+        curr=ahead;
+      }
+
+       return prev;
+    }
 }
 }
